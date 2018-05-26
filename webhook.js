@@ -17,22 +17,67 @@ module.exports = custSearch
 const cseResult = require('./search_cse.js')
 
 //POST route handler
-server.post('/', function(req, res, next) {
+server.post('/', function (req, res, next) => {
   let {
     status,
     result
   } = req.body;
-// download revit skillsets
-  if(status.code === 200 && result.action === "RevitSkills") {
+  // Reference Manual Search
+  if(status.code === 200 && result.action === 'REFMANUAL') {
+    // const {
+    //   RefManAction,
+    //   RefManAction1,
+    //   RefManObject,
+    //   RefManObject1
+    // } = result.parameters;
+
 // test results.
-      let responseText = 'I am downloadng it for you now' ;
+    let responseText1 = searchRefManual;
+      res.json({
+        speech: responseText1,
+        displayText: responseText1,
+        source: "BIMhelper-webhook"
+      });
+
+  }
+
+// download revit skillsets
+  if(status.code === 200 && result.action === 'RevitSkills') {
+// test results.
+      let responseText4 = 'I am downloaidng it for you now' ;
         res.json({
-          speech: responseText,
-          displayText: responseText,
+          speech: responseText4,
+          displayText: responseText4,
           source: "BIMhelper-webhook"
         });
 
   }
+
+
+//const custSearch = JSON.stringify(result.resolvedQuery)
+  if(status.code === 200 && result.action === 'modelhelp') {
+  // test results.
+    let responseText2 = 'custSearch';
+      res.json({
+        speech: responseText2,
+        displayText: responseText2,
+        source: "BIMhelper-webhook"
+      });
+
+    }
+
+//const webSearch = JSON.stringify(result.resolvedQuery)
+  if(status.code === 200 && result.action === 'input.unknown') {
+  // test results.
+    let responseText3 = webSearch;
+      res.json({
+        speech: responseText3,
+        displayText: responseText3,
+        source: "BIMhelper-webhook"
+      });
+
+    }
+
   return next();
 });
 
