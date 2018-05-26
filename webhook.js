@@ -25,10 +25,10 @@ server.post('/', function(req, res, next) {
 // download revit skillsets
   if(status.code === 200 && result.action === 'RevitSkills') {
 // test results.
-      let responseText4 = 'I am downloadng it for you now' ;
+      let responseText = 'I am downloadng it for you now' ;
         res.json({
-          speech: responseText4,
-          displayText: responseText4,
+          speech: responseText,
+          displayText: responseText,
           source: "BIMhelper-webhook"
         });
 
