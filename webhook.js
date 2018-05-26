@@ -23,7 +23,7 @@ server.post('/', function(req, res, next) {
     result
   } = req.body;
 // download revit skillsets
-  if(status.code === 200 && result.action === 'RevitSkills') {
+  if(status.code === 200 && result.action === "RevitSkills") {
 // test results.
       let responseText = 'I am downloadng it for you now' ;
         res.json({
