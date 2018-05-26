@@ -1,0 +1,22 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node webhook.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jasper Wong",
+  "license": "ISC",
+  "dependencies": {
+    "actions-on-google": "^1.7.0",
+    "async": "^2.6.0",
+    "google-auth-library": "^0.12.0",
+    "googleapis": "^23.0.0",
+    "lodash": "^4.17.4",
+    "request": "^2.83.0",
+    "restify": "^6.3.4",
+    "stringify": "^5.2.0",
+    "yargs": "^4.7.1"
+  },
+  "description": ""
+}
